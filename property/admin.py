@@ -3,6 +3,11 @@ from django.contrib import admin
 from .models import Flat, Complaint, Owner
 
 
+class OwnersInline(admin.TabularInline):
+    model = Flat.owned_by.through
+    raw_id_fields = ('owner',)
+
+
 class FlatAdmin(admin.ModelAdmin):
     search_fields = ('town', 'address')
     readonly_fields = ('created_at',)
@@ -22,9 +27,11 @@ class FlatAdmin(admin.ModelAdmin):
         'floor',
         'has_balcony')
     raw_id_fields = ('liked_by',)
+    inlines = (OwnersInline,)
 
     def show_likes(self, obj):
         return list(obj.liked_by.all())
+    show_likes.short_description = 'Лайки'
 
 
 class ComplaintAdmin(admin.ModelAdmin):
@@ -43,6 +50,7 @@ class OwnerAdmin(admin.ModelAdmin):
 
     def show_flats(self, obj):
         return list(obj.owned_flats.all())
+    show_flats.short_description = 'Собственность'
 
 
 admin.site.register(Flat, FlatAdmin)
