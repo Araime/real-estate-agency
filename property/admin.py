@@ -19,10 +19,11 @@ class FlatAdmin(admin.ModelAdmin):
         'rooms_number',
         'floor',
         'has_balcony')
+    raw_id_fields = ('liked_by',)
 
 
 class ComplaintAdmin(admin.ModelAdmin):
-    raw_id_fields = ('complaint_subject',)
+    raw_id_fields = ('user', 'complaint_subject',)
     list_display = ('user', 'complaint_subject')
 
 
