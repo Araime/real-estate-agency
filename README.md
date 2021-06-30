@@ -3,6 +3,8 @@
 Сайт находится в разработке, поэтому доступна только страница со списком квартир и 
 админка для наполнения БД.
 
+<a href="https://ibb.co/tC8R7fy"><img src="https://i.ibb.co/ThmyVXz/image.png" alt="image" border="0"></a>
+
 ## Как установить
 
 ### Скачать
@@ -78,6 +80,8 @@ python manage.py runserver
 Для наполнения базы данных, добавления новых данных , необходимо зайти по адресу 
 [http://127.0.0.1:8000/admin](http://127.0.0.1:8000/admin/). Для входа 
 используйте учетную запись, созданную при помощи команды `createsuperuser`.
+
+<a href="https://ibb.co/LCpGJFd"><img src="https://i.ibb.co/D7Kq8Jf/3.png" alt="3" border="0"></a>
 
 ## Цели проекта
 
