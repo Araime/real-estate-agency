@@ -7,7 +7,6 @@ def connect_flats_with_owners(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
     Owner = apps.get_model('property', 'Owner')
     for owner in Owner.objects.all():
-        print(owner)
         flats = Flat.objects.filter(owner=owner.owner)
         owner.owned_flats.set(flats, clear=True)
 
